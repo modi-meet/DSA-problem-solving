@@ -4,7 +4,6 @@ To delete a node from BST,
   - and then delete it
 
 **After deleting the node, the BST properties should be satisfied!
-
 */
 
 class Solution {
@@ -36,9 +35,6 @@ public:
     }
 };
 
-
-
-
 // TIME COMPLEXITY : O(height of the tree) ~ O(logN)
 //                   O(N) worst case
 
@@ -56,5 +52,4 @@ public:
         or
 
         ii. connect root node to key.left and join key.right to key.left -> highest value (predecessor)
-
 */
