@@ -94,7 +94,6 @@ class Solution {
 
   int kthSmallest(TreeNode? root, int k) {
     helper(root, k);
-    
     return ans;
   }
 }
