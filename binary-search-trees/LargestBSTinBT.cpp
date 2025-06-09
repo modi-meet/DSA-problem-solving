@@ -20,13 +20,12 @@ public:
     int max_node = 0;
     void dfs(Node* root){
         if(root == NULL) return;
-        
+        //L
         dfs(root->left);
         
         if(isBST(root, INT_MAX, INT_MIN)) 
             max_node = max(max_node, nodeCount(root));
-            
-        
+        //R
         dfs(root->right);
     }
 
@@ -46,11 +45,8 @@ public:
         int min;
         bool isBST;
 };
-
 class Solution {
 public:
-    
-    
     Info solve(Node* root, int &max_node){
         if(root == NULL) {
             return {0, INT_MIN, INT_MAX, true}; 
@@ -60,7 +56,6 @@ public:
         Info right = solve(root->right, max_node);
         
         Info currNode;
-    
         currNode.nodeCnt = (left.nodeCnt + right.nodeCnt) + 1;
         currNode.max = max(root->data, right.max);
         currNode.min = min(root->data, left.min);
