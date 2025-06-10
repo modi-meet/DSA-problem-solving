@@ -2,7 +2,7 @@
 Convert Sorted List to Binary Search Tree
 
 ListNode* is a LinkedList in non-decreasing order
- */
+*/
 
 class Solution {
 public:
@@ -34,7 +34,6 @@ public:
 // Time Complexity : O(N*logN) , logN - height of the tree to build the tree
 //                               O(n) - each call counts miid by slow-fast technique 
 
-
 /* Explanation
 
 To find the middle node of the LinkedList,
@@ -48,5 +47,4 @@ After finding the middle node,
         - we keep the connection of the node next to midnode as it will become head for right subtree
 
     //base case will be, if root becomes null we return null node.  
-
 */
