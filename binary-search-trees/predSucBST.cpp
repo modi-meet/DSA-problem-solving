@@ -3,7 +3,6 @@
 
 class Solution {
 public:
-
     Node* pred = NULL;
     Node* succ = NULL;
       
@@ -53,7 +52,6 @@ public:
         return {pred, succ};
     }
 };
-
 // TIME COMPLEXITY: TC - O(H) H - height of BST
 
 /*
@@ -64,14 +62,12 @@ Explanation
 
 Steps - 
     1. Traverse to find the key node
-
     2. if key node found,
         - go to left subtree, find predecessor
         - go to right subtree, find successor
     3. if key NOT found, return 
         - closest smaller (predecessor) node
         - & closest greater (successor) node to key node
-
     4. Base case,
         - If either predecessor or successor is not found, then set it to NULL.
 */
