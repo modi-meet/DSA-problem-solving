@@ -9,7 +9,7 @@ This includes the "*window*" that slides over the data, which can either be of a
 
 ## How to indentify? 🤔
 It involves: <br>
-Whenever the problem stats working on `subarray` or `substring`, sliding window technique should be considered for solving.<br>
+- Whenever the problem stats working on `subarray` or `substring`, sliding window technique should be considered for solving.<br>
 **Keywords**: Look for terms like "subarray," "substring," "contiguous," or "longest/shortest."
 
 ### Ordinary patterns
