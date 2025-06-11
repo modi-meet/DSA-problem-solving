@@ -8,9 +8,9 @@ This includes the "*window*" that slides over the data, which can either be of a
 - Reduces the *time complexity* by iterating through array/string only once (avoiding nested loops).
 
 ## How to indentify? 🤔
-It involves: 
-    - Whenever the problem stats working on `subarray` or `substring`, sliding window technique should be considered for solving.
-    - **Keywords**: Look for terms like "subarray," "substring," "contiguous," or "longest/shortest."
+It involves:
+Whenever the problem stats working on `subarray` or `substring`, sliding window technique should be considered for solving.
+**Keywords**: Look for terms like "subarray," "substring," "contiguous," or "longest/shortest."
 
 ### Ordinary patterns
 
