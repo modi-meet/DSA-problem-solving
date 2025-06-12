@@ -1,3 +1,5 @@
+// Given head, determine if the linked list has a cycle in it. cycle means when a node's next pointer points to any previous 
+// node creating contiguos Linked list cycle
 class Solution {
 public: // Brute Force
     bool hasCycle(ListNode *head) {
