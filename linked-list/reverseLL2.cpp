@@ -29,7 +29,7 @@ public:
             prev = prev->next;
             i++;
         }
-
+        
         ListNode* newHead = reverseLL(prev->next, i, right);
         prev->next = newHead; // Now prev->next is the start of the reversed part
 
@@ -40,7 +40,7 @@ public:
 
 /* Explanation
 Since the LL should be reversed only b/w left and right nodes,
-    - apple LL reversal only to range [left,right] nodes
+    - apply LL reversal only to range [left,right] nodes
     - unlike normal reversal of a LL, here connection of reversed part with original LL is required!
         - Connect reversed LL head to the previous node of `left`
         - Connect reversed LL tail to the next node of `right`
