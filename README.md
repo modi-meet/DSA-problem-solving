@@ -1,7 +1,7 @@
 # Data Structres and Algorithm 🧠
 
 The Respository includes DSA problems that are **essential** for **understanding** and building **strong fundmental** in Data-structres and Alorithms.
-This provides easy-to-understand and clean code for problems across various platforms. 
+This provides easy-to-understand and clean code for the problems I've solved across various platforms. 
 
 ---
 
@@ -17,14 +17,13 @@ Each solution is written with clean, readable code and often includes patterns, 
 ## What's Inside
 
 - Solved problems categorized by topic (Trees, Graphs, DP, etc.)
-- Code with **Time & Space Complexity** and **Optimal approaches**
+- Code with **Time & Space Complexities** and **Optimal approaches**.
 - ⚙️ **Coding Patterns** like Sliding Window, Two Pointers, Recursion, etc.
 - 📌 Constantly updated as I progress.
 
 ---
 
 ### Connect with Me 📫
-
 - 📧 Mail at - meetmodi8080@gmail.com
 - 🔗 Connect here - https://www.linkedin.com/in/modi-meet-profile/
 
