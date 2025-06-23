@@ -1,4 +1,4 @@
-
+// Maximum Number of Vowels in a Substring of Given Length
 
 // Brute force 
 class Solution {
@@ -22,7 +22,7 @@ public:
         return ans;
     }
 };
-// Time Complexity - O(n*k), Space Complexity - O(1)
+// Time Complexity : O(n*k), Space Complexity : O(1)
 
 // OPTIMAL APPROACH
 class Solution {
