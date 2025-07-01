@@ -31,7 +31,6 @@ public:
         sort(begin(nums), end(nums));
 
         int l = 0, r = 1; // r -> *starts from 1
-
         while(r < n){
             if(nums[r] - nums[l] == 1) ans = max(ans, r-l+1);
 
@@ -39,7 +38,6 @@ public:
 
             r++;        
         }
-
         return ans;
     }
 };
