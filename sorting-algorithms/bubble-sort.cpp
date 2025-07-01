@@ -39,7 +39,7 @@ int main(){
 
 /* How Bubble Sort works?
 - place largest element to the end of the array in each iteration
-- for current window(j to i) set the largest element to the end
+- for current window(l to r) set the largest element to the end
 - each iteration ensures that array after r pointer is at least sorted; as largest element till r is pushed to the end.
 
 TIME COMPLEXITY : O(N^2) (Worst case)/(Average complexity)
