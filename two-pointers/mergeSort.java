@@ -20,3 +20,6 @@ class Solution {
     }
 }
 // Time Complexity: O(m+n), Space Complexity: O(1)
+
+// last while loop is to handle when nums2 has remaining elements but complete nums1 is inserted
+ 
