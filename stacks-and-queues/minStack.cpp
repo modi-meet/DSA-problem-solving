@@ -52,13 +52,13 @@ public:
     }
     
     void pop() {
-        if(s.empty()) return;
+        if(st.empty()) return;
 
-        if(s.top() < minVal){ // it is not possible to get the minimum value; it must be the previous minimum
+        if(st.top() < mini){ // it is not possible to get the minimum value; it must be the previous minimum
             // hence, restore the previous minimum
-            minVal = 2*minVal - s.top();
+            mini = 2*mini - st.top();
         }
-        s.pop();
+        st.pop();
     }
     
     int top() {
