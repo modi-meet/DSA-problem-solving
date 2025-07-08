@@ -58,3 +58,8 @@ public:
 };
 // Time Complexity : O(n1+n2)
 // Space Complexity : O(n1+n2)
+
+/*
+Explanation: 
+Using monotonic stack for next greater element. (non-decreasing order from the end of nums2)
+*/
