@@ -19,7 +19,7 @@ class Solution {
         }
         
         // k>0 ; remove last k digits
-        while (k > 0 && !st.isEmpty()) { 
+        while (k > 0 && !st.isEmpty()) { //O(k)
             st.pop();
             k--;
         }
@@ -40,7 +40,7 @@ class Solution {
         return ans.substring(idx);      
     }   
 }
-// Time Complexity: O(n), Space COmplexity: O(n)
+// Time Complexity: O(n)+O(k), Space COmplexity: O(n)
 
 /*
 Important Edge Cases: 
