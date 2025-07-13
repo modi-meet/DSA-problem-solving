@@ -14,8 +14,6 @@ And Queue as-
 
 ---
 
-## 📌 When to Use
-
 | Pattern / Keyword | Structure | Tip to Recognize |
 |------------------|-----------|------------------|
 | **Undo / Backtracking / Recursion** | Stack | LIFO order (Last In First Out) |
