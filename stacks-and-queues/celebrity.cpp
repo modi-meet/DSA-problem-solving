@@ -37,6 +37,37 @@ class Solution {
   public:
     int celebrity(vector<vector<int> >& mat) {
         int n = mat.size();
+        stack<int> st;
+        
+        for(int i=0; i<n; i++) st.push(i);
+        
+        while(st.size() > 1){
+            int i = st.top(); st.pop();
+            int j = st.top(); st.pop();
+            
+            if(mat[i][j] == 0){ // i don't know j
+                st.push(i); // i can be the celebrity
+            }
+            else st.push(j);
+        }
+        
+        int celeb = st.top();
+        for(int i=0; i<n; i++){
+            if(i == celeb) continue;
+            
+            if(mat[i][celeb] == 0 || mat[celeb][i] == 1) return -1;
+        }
+        
+        return celeb;
+    }
+};
+// Time Complxity: O(n), Space Complexity: O(n)
+
+// Approach: 3
+class Solution {
+  public:
+    int celebrity(vector<vector<int> >& mat) {
+        int n = mat.size();
         
         int top = 0, bottom = n-1;
         
