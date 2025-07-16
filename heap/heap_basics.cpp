@@ -12,6 +12,7 @@ public:
         size = 0;
     }
 
+    // Insertion in Heap
     void insert(int val){
         size++;
         int idx=size;
@@ -27,6 +28,7 @@ public:
         }
     }
 
+    // Deletion in Heap
     void deleteRoot(){
         if(size == 0) {
             cout << "nothing to delete" << endl;
@@ -62,6 +64,7 @@ public:
     }
 };
 
+// Making the root node heapified (preferred heap order)
 void heapify(vector<int> &arr, int n, int i){
     int largest = i;
     int left = 2*i, right = 2*i + 1;
@@ -80,6 +83,19 @@ void heapify(vector<int> &arr, int n, int i){
     return;        
 }
 
+void HeapSort(vector<int> &arr, int n){
+    int t = n-1;
+
+    while(t > 1){
+        //1. swap first and current last element 
+        swap(arr[t], arr[1]);
+        t--;
+
+        //2. heapify at the swapped node(index)
+        heapify(arr, t, 1);
+    }
+}
+
 int main(){
     Heap hp;
 
@@ -88,19 +104,29 @@ int main(){
     hp.insert(48);
     hp.insert(35);
     hp.insert(25);
-    hp.insert(46);
+    hp.insert(46); cout << "Insertion: ";
     hp.print();
-    hp.deleteRoot();
+    hp.deleteRoot(); cout << "Deletion: ";
     hp.print(); // Time Complexity: O(logN)
 
-    vector<int> arr = {-1, 43, 56, 54, 34, 87};
+    vector<int> arr = {-1, 43, 56, 54, 34, 87}; // 1-based indexing
     int n = arr.size();
+
+    cout << "Printing Before Heapify" << endl;
+    for(int i=1; i<n; i++) cout << arr[i] << " ";
+    cout<<endl;
 
     for(int i=n/2; i>0; i--){
         heapify(arr, n, i);
     }
 
-    cout << "Printing now" << endl;
+    cout << "Printing After Heapify(Max Heap)" << endl;
+    for(int i=1; i<n; i++) cout << arr[i] << " ";
+    cout<<endl;
+
+    HeapSort(arr, n);
+
+    cout << "After Heap Sort" << endl;
     for(int i=1; i<n; i++) cout << arr[i] << " ";
     cout<<endl;
 
@@ -108,10 +134,14 @@ int main(){
 }
 
 /* Output : 
-56 55 48 35 25 46 
-55 46 48 35 25 
-Printing now
-87 56 54 34 43
+Insertion: 56 55 48 35 25 46 
+Deletion: 55 46 48 35 25 
+Printing Before Heapify
+43 56 54 34 87 
+Printing After Heapify(Max Heap)
+87 56 54 34 43 
+After Heap Sort
+34 54 43 56 87 
 */
 
 /*
@@ -122,4 +152,9 @@ It is a CBT (Complete Binary Tree) that satisfies the heap property:
 - where the smallest (or largest) element is always at the root of the tree.
 
 Insertion and deletion in heap takes O(logN) time.
+
+Insert(x)           ->  Add at end & heapify up	                            ->  O(log n)
+Delete Root         ->  Swap root with last, remove last, heapify down      ->  O(log n)
+Heapify (At Index)  -> 	Builds maxHeap or minHeap at a particular node/idx  ->  O(log n)
+
 */
