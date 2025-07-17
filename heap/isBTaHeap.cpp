@@ -6,7 +6,6 @@ class Solution {
 
         bool left = isCBT(root->left, size, 2*i+1);
         bool right = isCBT(root->right, size, 2*i+2);
-        
         return left && right;
     }
     
@@ -16,7 +15,7 @@ class Solution {
         else if(root->right == NULL){ // only left node exists
             return root->data > root->left->data;
         } 
-        
+        // both nodes exist
         bool left = isMaxHeap(root->left);
         bool right = isMaxHeap(root->right);
         
@@ -28,7 +27,6 @@ class Solution {
         
         return 1 + countNodes(root->left)+countNodes(root->right);
     }
-    
 public:
     bool isHeap(Node* tree) {
         int n = countNodes(tree); // total nodes in the tree
