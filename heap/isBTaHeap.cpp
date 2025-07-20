@@ -1,4 +1,5 @@
 class Solution {
+private
     bool isCBT(Node* root, int size, int i){
         if(root == NULL) return true;
         

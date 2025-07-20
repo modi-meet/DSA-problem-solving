@@ -33,5 +33,5 @@ public:
         return;
     }
 };
-// Time Complexity: O(),
+// Time Complexity: O(N),
 // Space Complexity: O(N) (for postorder array) + O(N) (in worst case) (for recursion stack)
