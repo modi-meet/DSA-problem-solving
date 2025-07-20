@@ -64,7 +64,7 @@ public:
         pq.push(num);
     }
 };
-// Time Complexity: O(logK) (heap insertion and pop), Space Complexity: O(K) (elements stored in pq and set)
+// Time Complexity: O(logK) (heap insertion and pop), Space Complexity: O(K) (K - elements stored in pq and set)
 
 // Approach 3
 class SmallestInfiniteSet {
@@ -82,18 +82,17 @@ public:
         else{
             ans = *st.begin();
             st.erase(ans);
-        } 
-
+        }
         return ans;    
     }
 
-    void addBack(int num){
+    void addBack(int num){ // O(logK)
         if(num >= currSmallest || st.count(num)) return;
 
         st.insert(num);
     }
 };
-// Time Complexity: O(logK) (ordered set insertion and erase), Space Complexity: O(K) (elements stored in pq and set)
+// Time Complexity: O(logK) (ordered set insertion and erase), Space Complexity: O(K) (K - elements stored in pq and set)
 
 /*
 Approach 1
