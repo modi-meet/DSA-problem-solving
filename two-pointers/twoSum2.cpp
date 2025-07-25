@@ -35,7 +35,6 @@ public:
 
         // --------------------------------------------
         // 3. Two Pointer Approach
-        // TC: O(n), SC: O(1)
         int i = 0, j = n - 1;
         while (i < j) {
             int sum = nums[i] + nums[j];
@@ -44,6 +43,7 @@ public:
             else if (sum > target) j--;
             else i++;
         }
+        // TC: O(n), SC: O(1)
         return {};
     }
 };
