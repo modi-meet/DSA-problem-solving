@@ -24,7 +24,7 @@ Each solution is written with clean, readable code and often includes patterns, 
 ---
 
 ### Connect with Me 📫
-- 📧 Mail at - meetmodi8080@gmail.com
+- 📧 Mail at - mail.modimeet@gmail.com
 - 🔗 Connect here - https://www.linkedin.com/in/modi-meet-profile/
 
 ---  
