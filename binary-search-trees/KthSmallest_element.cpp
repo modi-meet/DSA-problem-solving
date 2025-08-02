@@ -68,35 +68,31 @@ public:
 //TIME COMPLEXITY: O(H + K) or O(N) (worst case)
 //Space compelexity : O(n)
 class Solution {
-    int ans = -1;
+public:
+    int kthSmallest(TreeNode* root, int k) {
+        stack<TreeNode*> s;
 
-  void helper(TreeNode? root, int k){
-    int limit = 0;
-    List<TreeNode?> st = [];
+        while (root != nullptr || !s.empty()) {
+            while (root != nullptr) { // L: Go to the extreme left
+                s.push(root);
+                root = root->left;
+            }
 
-    while(root != null || st.isNotEmpty){
-        while(root != null){ //go to extreme left
-            st.add(root);
-            root = root.left;
-        } //L
-
-        root = st.removeLast();
-        //N
-        limit++;
-        if(limit == k) {
-            ans = root!.val; 
-            return;
+            // N
+            root = s.top();
+            s.pop();
+          
+            k--; // Decrement k. If it reaches zero, we've found our answer.
+            if (k == 0) { // found the node!
+                return root->val;
+            }
+          
+            // R
+            root = root->right;
         }
-        //R
-        root = root!.right;
+        return -1;
     }
-  }
-
-  int kthSmallest(TreeNode? root, int k) {
-    helper(root, k);
-    return ans;
-  }
-}
+};
 
 /* 
 *******Explanation*******
