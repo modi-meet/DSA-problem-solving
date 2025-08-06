@@ -27,3 +27,5 @@ class Solution {
 };
 // Time Complexity: O(N) + O(2*E)
 // Space Complexity: O(3*N)~O(N) (stack, seen, ans)
+
+// For Directed-Graph- TC: O(N) + O(E)
