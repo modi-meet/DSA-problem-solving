@@ -41,52 +41,57 @@ public:
         return prov;
     }
 };
-// Time Complexity: O(N) + O()
+// Time Complexity: O(N) + O(V + 2*E)
 // Space Complexity: O(N)
 
 // BFS(Adj List) Approach
 class Solution {
 private:
-    void bfs(int stNode, vector<vector<int>>& adjList, vector<bool>& seen){
+    void bfs(int stNode, vector<bool>& seen, vector<vector<int>>& adj) {
+        seen[stNode] = true;
+
         queue<int> q;
         q.push(stNode);
-        seen[stNode] = true;
-        
-        
-        while(!q.empty()) {
+
+        while(!q.empty()){
             int node = q.front();
             q.pop();
-            
-            for(int neighbor  : adjList[node]) {
-                if(!seen[neighbor]) {
-                    seen[neighbor] = true;
-                    q.push(neighbor);
+
+            for(auto neighbour : adj[node]){
+                if(!seen[neighbour]){
+                    q.push(neighbour);
+                    seen[neighbour] = true;
                 }
             }
         }
     }
-    
+
 public:
-    int numProvinces(vector<vector<int>> adj, int V) {
-        vector<vector<int>> adjList(V);
-        
-        for (int i = 0; i < V; ++i) {
-            for (int j = 0; j < V; ++j) {
-                if (adj[i][j] == 1 && i != j) {
-                    adjList[i].push_back(j);
+    int findCircleNum(vector<vector<int>>& isConnected) {
+        int n = isConnected.size();
+        vector<vector<int>> adj(n); // adjacency list
+
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n; j++){
+                if(i != j && isConnected[i][j] == 1) { // i, j - two nodes connected
+                    adj[i].push_back(j);
+                    adj[j].push_back(i);
                 }
             }
         }
-        
+
         int prov = 0;
-        vector<bool> seen(V, false);
-        
-        for(int i=0; i<V; i++){
-            if(!seen[i]) {
+        vector<bool> seen(n, false);
+
+        for(int i=0; i<n; i++){
+            if(!seen[i]) { // if the node is not visited previously; new province node found
                 prov++;
-                bfs(i, adjList, seen);
+                bfs(i, seen, adj);
             }
         }
+
         return prov;
     }
 };
+// Time Complexity: O(N) + O(V + 2*E)
+// Space Complexity: O(N)
