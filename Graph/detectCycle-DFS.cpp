@@ -38,7 +38,7 @@ public:
         return false;
     }
 };
-// Time Complexity: O(n*m)
-// Space Complexity: O(n*m)
+// Time Complexity: O(V + 2E)
+// Space Complexity: O(V + E)
 
 // We have a cycle if we arrive at the same cell from multiple directions during DFS.
