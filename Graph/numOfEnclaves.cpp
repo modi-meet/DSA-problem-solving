@@ -6,31 +6,24 @@
 class Solution {
 public:
     int numEnclaves(vector<vector<int>>& grid) {
-        int m = grid.size();
-        int n = grid[0].size();
+        int n = grid.size();
+        int m = grid[0].size();
 
-        vector<vector<int>> seen(m, vector<int>(n, 0));
+        vector<vector<int>> seen(n, vector<int>(m, 0));
 
         queue<pair<int,int>> q;
 
-        // Top edge
-        for(int j=0; j<n; j++){
-            if(grid[0][j] == 1) q.push({0, j});
-        }
-
-        // Bottom edge
-        for(int j=0; j<n; j++){
-            if(grid[m-1][j] == 1) q.push({m-1, j});
-        }
-
-        // Left edge
-        for(int i=0; i<m; i++){
-            if(grid[i][0] == 1) q.push({i, 0});
-        }
-
-        // Right edge
-        for(int i=0; i<m; i++){
-            if(grid[i][n-1] == 1) q.push({i, n-1});
+        // Top edge, Bottom edge, Left edge, Right edge
+        for(int i=0; i<n; i++){
+            for(int j=0; j<m; j++){
+                // first row, first col, last row, last col
+                if(i == 0 || j == 0 || i == n-1 || j == m-1){
+                    if(grid[i][j] == 1){
+                        q.push({i, j});
+                        seen[i][j] = 1;
+                    }
+                }
+            }
         }
         
         int row_d[4] = {-1,1,0,0};
@@ -47,7 +40,7 @@ public:
                 int nrow = row + row_d[k];
                 int ncol = col + col_d[k];
 
-                if(nrow >= 0 && nrow < m && ncol >=0 && ncol < n){
+                if(nrow >= 0 && nrow < n && ncol >=0 && ncol < m){
                     if(!seen[nrow][ncol] && grid[nrow][ncol] == 1){ // isLand and not seen
                         seen[nrow][ncol] = 1;
                         q.push({nrow, ncol});
@@ -59,8 +52,8 @@ public:
         int count = 0;
 
         // unseen 1's
-        for(int i=0; i<m; i++){
-            for(int j=0; j<n; j++){
+        for(int i=0; i<n; i++){
+            for(int j=0; j<m; j++){
                 if(grid[i][j] == 1 && seen[i][j] != 1) count++;
             }
         }
