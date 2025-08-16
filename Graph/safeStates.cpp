@@ -54,3 +54,53 @@ public:
 };
 // Time Complexity: O(V + E)
 // Space Complexity: O(V)
+
+// BFS
+class Solution {
+public:
+    vector<int> eventualSafeNodes(vector<vector<int>>& adj) {
+        int n = adj.size();
+
+        vector<vector<int>> adjRev(n);
+        vector<int> inDegree(n);
+
+        for(int u=0; u<n; u++){
+            for(auto v : adj[u]) {
+                adjRev[v].push_back(u);
+                inDegree[u]++;
+            }
+        }
+
+        queue<int> q;
+
+        for(int i=0; i<n; i++){
+            if(inDegree[i] == 0) q.push(i);
+        }
+
+        vector<int> topo;
+
+        while(!q.empty()){
+            auto node = q.front();
+            q.pop();
+
+            topo.push_back(node);
+
+            for(auto neighbour : adjRev[node]){
+                inDegree[neighbour]--;
+
+                if(inDegree[neighbour] == 0) q.push(neighbour);
+            }
+        }
+
+        sort(topo.begin(), topo.end());
+        return topo;
+    }
+};
+
+
+// If there is a cycle in a graph then there exist no terminal nodes.
+// To check for cycle present or not:
+// 1. DFS, 2. BFS(Khan's Algo) (Topological Sort)
+
+// The kahn's algo pushes nodes to queue, whose inDegree is zero.
+// Whereas, the terminal node has zero outDegree. Hence, changes edge direction helps solving the problem using kahn's algorithm.
