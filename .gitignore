@@ -1,0 +1,10 @@
+.vscode/
+
+# Ignore build files
+*.out
+*.exe
+*.o
+
+# Ignore temporary files
+*.log
+*.tmp
