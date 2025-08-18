@@ -1,4 +1,6 @@
 // Shortest Path in Weighted undirected graph
+// Find the shortest weight path between the vertex 1 and the vertex n, Return a list of integers consist of the nodes on that path. 
+// If no path exists, then return a list containing a single element -1.
 
 class Solution {
 public:
@@ -49,6 +51,8 @@ public:
         return ans;
     }
 };
+// TC : O(E * log(V))
+// SC : O(V + E)
 
 // Dijkstra's Algo is useful, (take source node as 1)
 // But, it can only give the shortest distances (dist array)
