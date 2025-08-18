@@ -33,7 +33,7 @@ class Solution {
         return dist;
     }
 };
-// Time Complexity: O((V + 2E) * log V)
+// Time Complexity: O((V + E) * log V)
 // Space Complexity: O(V + E)
 
 // Using Set
@@ -69,7 +69,7 @@ class Solution {
         return dist;
     }
 };
-// Time Complexity: O((V + 2E) * log V)
+// Time Complexity: O((V + E) * log V)
 // Space Complexity: O(V + E)
 
 // The Graph is connected and doesn't contain any negative weight edge.
