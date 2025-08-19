@@ -18,7 +18,7 @@ public:
         adj[v].push_back(u);
     }
 
-    printAdj() {
+    void printAdj() {
         for(int i=0; i<V; i++) {
             cout << i << " : ";
             for(int neighbour : adj[i]){
