@@ -37,31 +37,23 @@ public:
 class Solution {
     int n;
     int t[1005][1005];
-
-    int solve(vector<int>& nums, int idx, int target) {
-        if(idx == n) {
-            if(target == 0) return 1;
-            
-            return 0;
-        }
-
-        if(t[idx][target] != -1) return t[idx][target];
-
-        int take = 0;
-        if(nums[idx] <= target) {
-            take = solve(nums, idx + 1, target - nums[idx]);
-        }
-
-        int notTake = solve(nums, idx + 1, target);
-
-        return t[idx][target] = take + notTake;
-    }
-
+    
 public:
     int perfectSum(vector<int>& nums, int target) {
         int n = nums.size();
         vector<vector<int>> dp(n+1, vector<int>(target+1, 0));
+
+        for(int i=0; i<n; i++) dp[i][0] = 1;
+
+        for(int i=1; i<=n; i++){
+            for(int j=1; j<=n; j++){
+                if(nums[i] <= target) {
+                    dp[i][j] += dp[i-1][j - nums[i-1]];
+                }
+                dp[i][j] += dp[i-1][j];
+            }
+        }
         
-        return solve(nums, 0, target);
+        return dp[n][target];
     }
 };
