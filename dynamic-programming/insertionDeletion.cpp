@@ -1,3 +1,7 @@
+// Minimum number of deletions and insertions
+// Given two strings word1 and word2, return the minimum number of steps required to make word1 and word2 the same.
+// In one step, you can delete exactly one character in either string.
+
 class Solution {
   public:
     int minOperations(string &s1, string &s2) {
@@ -24,3 +28,5 @@ class Solution {
         return insertion + deletion;
     }
 };
+// Time Complexity: O(n*m)
+// Space Complexity: O(n*m)
