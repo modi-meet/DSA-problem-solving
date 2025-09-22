@@ -94,5 +94,7 @@ class Solution {
         return dp[n][sum];
     }
 };
+// Time complexity: O(n*sum)
+// Space complexity: O(n*sum)
 
 // Count number of ways that sum can become 
