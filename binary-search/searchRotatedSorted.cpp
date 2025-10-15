@@ -1,4 +1,4 @@
-// Search in Rotated Sorted Array
+// Search in Rotated Sorted Array (no duplicate elements)
 
 class Solution {
 public:
