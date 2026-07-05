@@ -185,3 +185,52 @@ public class SnakeLadder {
         engine.playGame();
     }
 }
+
+/*
+javac SnakeLadder.java && java SnakeLadder
+
+OUTPUT: 
+
+--- Starting Snake and Ladder Simulator ---
+Alice rolled a 1 and moved from 0 to 1
+Bob rolled a 2 and moved from 0 to 2
+Alice rolled a 6 and moved from 1 to 7
+Bob rolled a 4 and moved from 2 to 6
+Alice rolled a 2 and moved from 7 to 9
+   Yay! Alice took a ladder up to 31
+Bob rolled a 3 and moved from 6 to 9
+   Yay! Bob took a ladder up to 31
+Alice rolled a 3 and moved from 31 to 34
+Bob rolled a 6 and moved from 31 to 37
+Alice rolled a 2 and moved from 34 to 36
+Bob rolled a 4 and moved from 37 to 41
+Alice rolled a 4 and moved from 36 to 40
+   Yay! Alice took a ladder up to 59
+Bob rolled a 2 and moved from 41 to 43
+Alice rolled a 5 and moved from 59 to 64
+Bob rolled a 6 and moved from 43 to 49
+Alice rolled a 5 and moved from 64 to 69
+Bob rolled a 6 and moved from 49 to 55
+Alice rolled a 5 and moved from 69 to 74
+Bob rolled a 4 and moved from 55 to 59
+Alice rolled a 1 and moved from 74 to 75
+Bob rolled a 4 and moved from 59 to 63
+Alice rolled a 6 and moved from 75 to 81
+Bob rolled a 6 and moved from 63 to 69
+Alice rolled a 2 and moved from 81 to 83
+Bob rolled a 6 and moved from 69 to 75
+Alice rolled a 2 and moved from 83 to 85
+Bob rolled a 5 and moved from 75 to 80
+Alice rolled a 6 and moved from 85 to 91
+Bob rolled a 3 and moved from 80 to 83
+Alice rolled a 2 and moved from 91 to 93
+Bob rolled a 5 and moved from 83 to 88
+Alice rolled a 5 and moved from 93 to 98
+Bob rolled a 2 and moved from 88 to 90
+Alice rolled a 4 but needs exactly 2 to win. Turn skipped.
+Bob rolled a 2 and moved from 90 to 92
+Alice rolled a 2 and moved from 98 to 100
+
+Game Over! Alice wins the game!
+
+*/
