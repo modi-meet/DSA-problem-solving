@@ -102,7 +102,7 @@ class SmallSpot extends ParkingSpot {
 
     @Override
     public boolean canFitVehicle(Vehicle v) {
-        // TODO: Return true ONLY if the vehicle is a MOTORCYCLE
+        // Return true ONLY if the vehicle is a MOTORCYCLE
 
         return v.getType()==VehicleType.MOTORCYCLE;
 
@@ -116,7 +116,7 @@ class MediumSpot extends ParkingSpot {
 
     @Override
     public boolean canFitVehicle(Vehicle v) {
-        // TODO: Return true if the vehicle is a CAR or a MOTORCYCLE
+        // Return true if the vehicle is a CAR or a MOTORCYCLE
 
         return v.getType() == VehicleType.MOTORCYCLE || v.getType() == VehicleType.CAR;
     }
@@ -129,7 +129,7 @@ class LargeSpot extends ParkingSpot {
 
     @Override
     public boolean canFitVehicle(Vehicle v) {
-        // TODO: Return true for all vehicles (Large fits anything)
+        // Return true for all vehicles (Large fits anything)
 
         return true;
     }
@@ -227,13 +227,13 @@ class ParkingLot {
 
                 spot.park(vehicle);
 
-                System.out.println(vehicle.getLicensePlate() + " parked in Spot " + spot.getSpotNumber());
-
+                System.out.println(vehicle.getType() + " parked at " + spot.getType() + " Spot " + spot.getSpotNumber());
+                
                 return new Ticket(spot.getSpotNumber(), spot.getType());
             }
         }
 
-        throw new NoSpotAvailableException("No parking spot available for " + vehicle.getType());
+        throw new NoSpotAvailableException("Lot Full: No available spots for vehicle type " + vehicle.getType());
     }
 
     public double processExit(Ticket ticket) {
@@ -303,15 +303,15 @@ OUTPUT:
 --- Booting up Parking Lot System ---
 
 [Attempting to park Car 1]
-ABC-123 parked in Spot 2
+CAR parked at MEDIUM Spot 2
 
 [Attempting to park Car 2]
-XYZ-987 parked in Spot 3
+CAR parked at MEDIUM Spot 3
 
 [Attempting to park Car 3 - Cascading to Large]
-FALLBACK-1 parked in Spot 4
+CAR parked at LARGE Spot 4
 
 [Attempting to park Truck 1 - Should Fail]
-System Alert: No parking spot available for TRUCK
+System Alert: Lot Full: No available spots for vehicle type TRUCK
 
 */
